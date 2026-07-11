@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Linux Cafe - Perfect Match Design</title>
+    <title>Linux Cafe - Menu</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- <link rel="stylesheet" href="./src/output.css"> -->
@@ -48,7 +48,7 @@
     </style>
   </head>
   <body
-    class="bg-[#fdfbf7] dark:bg-[#1a120b] min-h-screen flex flex-col justify-between text-slate-800 dark:text-amber-100 transition-colors duration-300"
+    class="bg-[#fdfbf7] dark:bg-[#1a120b] min-h-screen flex flex-col justify-between text-slate-800 dark:text-amber-100 transition-colors duration-300 overflow-x-hidden"
   >
     <header
       class="fixed inset-x-0 top-4 md:top-6 z-50 px-4 md:px-6 max-w-6xl mx-auto"
@@ -56,7 +56,7 @@
       <nav
         class="flex h-14 items-center justify-between rounded-full bg-[#b58363]/90 dark:bg-[#2c1d11]/90 backdrop-blur-md px-6 md:px-8 shadow-md"
       >
-        <a href="#" class="text-white text-xl font-bold italic tracking-wide"
+        <a href="../index.html" class="text-white text-xl font-bold italic tracking-wide"
           >LinuxCafe</a
         >
 
@@ -73,7 +73,7 @@
           <li>
             <a
               href="#"
-              class="px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition duration-300"
+              class="px-4 py-2 rounded-full hover:bg-orange-500 text-white transition duration-300"
               >Menu</a
             >
           </li>
@@ -166,7 +166,7 @@
         id="mobile-menu"
         class="hidden md:hidden mt-2 bg-[#b58363] dark:bg-[#2c1d11] rounded-2xl p-4 shadow-lg flex flex-col gap-2 text-center text-white font-medium"
       >
-        <a href="#" class="py-2.5 rounded-xl hover:bg-orange-500 transition"
+        <a href="../index.html" class="py-2.5 rounded-xl hover:bg-orange-500 transition"
           >Home</a
         >
         <a href="#" class="py-2.5 rounded-xl hover:bg-orange-500 transition"
@@ -192,35 +192,43 @@
             >Sign In</a
           >
         </div>
-        <div class="text-center mt-12 pb-6">
-  
       </div>
     </header>
 
     <main class="w-full">
+   
       <section
-        class="relative bg-[#dcc2b1] dark:bg-[#251b14] pt-32 pb-24 md:pt-40 md:pb-32 px-4 sm:px-6 min-h-[600px] flex items-center justify-center overflow-hidden transition-colors duration-300"
+        class="relative bg-[#dcc2b1] dark:bg-[#251b14] pt-32 pb-16 md:pt-40 md:pb-20 px-4 sm:px-6 flex items-center justify-center overflow-hidden transition-colors duration-300"
       >
+        <div class="relative z-10 text-center space-y-2">
+          <h1
+            class="text-[#4a3325] dark:text-amber-100 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-wide font-serif"
+          >
+            View Our Menu
+          </h1>
+          <p
+            class="text-[#6b5345] dark:text-amber-300/70 text-xs sm:text-sm md:text-base font-medium"
+          >
+            Every drink we craft, all in one place.
+          </p>
+        </div>
+      </section>
 
-        <h1 class="text-[#4a3325] text-4xl md:text-5xl font-extrabold tracking-wide font-serif">
-      View Our Menu
-    </h1>
-  </div>
-      
-    
+      <!-- MENU GRID — 2 columns on phones, scaling up to 4 on desktop, with a
+           reasonable step at every breakpoint instead of jumping straight from
+           1 to 4 columns. -->
+      <section class="px-4 sm:px-6 py-12 md:py-20">
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl w-full mx-auto relative z-10"
+          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl w-full mx-auto"
         >
-
-     
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $3.0
               </span>
@@ -230,15 +238,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Iced Coffee
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -246,13 +254,13 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $5.0
               </span>
@@ -262,15 +270,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Strawberry Matcha
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -278,13 +286,13 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $3.0
               </span>
@@ -294,15 +302,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Brown Sugar
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -310,13 +318,13 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $4.0
               </span>
@@ -326,46 +334,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
-                Iced Coffee
+                Iced Americano
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
-              >
-                Get Now
-              </button>
-            </div>
-          </div>
-          <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
-          >
-            <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
-            >
-              <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
-              >
-                $3.0
-              </span>
-              <img
-                src="../picture/menuImg/Matccha.png"
-                alt="Iced Coffee"
-                class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
-              />
-            </div>
-            <div class="w-full text-center mt-4 space-y-3">
-              <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
-              >
-                Matcha
-              </h3>
-              <button
-                type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -373,13 +350,45 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
+              >
+                $3.0
+              </span>
+              <img
+                src="../picture/menuImg/Matccha.png"
+                alt="Matcha"
+                class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
+              />
+            </div>
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
+              <h3
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
+              >
+                Matcha
+              </h3>
+              <button
+                type="button"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+              >
+                Get Now
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+          >
+            <div
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
+            >
+              <span
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $5.0
               </span>
@@ -389,15 +398,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Strawberry Milk
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -405,31 +414,31 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $3.0
               </span>
               <img
                 src="../picture/menuImg/Vannila.png"
-                alt="Vannila"
+                alt="Vanilla Latte"
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
-               Vannila Latte
+                Vanilla Latte
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -437,13 +446,13 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $4.0
               </span>
@@ -453,28 +462,28 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Chocolate
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
             </div>
           </div>
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $3.0
               </span>
@@ -484,15 +493,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Iced Coffee
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -500,13 +509,13 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $5.0
               </span>
@@ -516,15 +525,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Strawberry Matcha
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -532,13 +541,13 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $3.0
               </span>
@@ -548,15 +557,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Brown Sugar
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -564,13 +573,13 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $4.0
               </span>
@@ -580,46 +589,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
-                Iced Coffee
+                Iced Americano
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
-              >
-                Get Now
-              </button>
-            </div>
-          </div>
-          <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
-          >
-            <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
-            >
-              <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
-              >
-                $3.0
-              </span>
-              <img
-                src="../picture/menuImg/Matccha.png"
-                alt="Iced Coffee"
-                class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
-              />
-            </div>
-            <div class="w-full text-center mt-4 space-y-3">
-              <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
-              >
-                Matcha
-              </h3>
-              <button
-                type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -627,13 +605,45 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
+              >
+                $3.0
+              </span>
+              <img
+                src="../picture/menuImg/Matccha.png"
+                alt="Matcha"
+                class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
+              />
+            </div>
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
+              <h3
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
+              >
+                Matcha
+              </h3>
+              <button
+                type="button"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+              >
+                Get Now
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+          >
+            <div
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
+            >
+              <span
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $5.0
               </span>
@@ -643,15 +653,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Strawberry Milk
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -659,31 +669,31 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $3.0
               </span>
               <img
                 src="../picture/menuImg/Vannila.png"
-                alt="Vannila"
+                alt="Vanilla Latte"
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
-               Vannila Latte
+                Vanilla Latte
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -691,13 +701,13 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $4.0
               </span>
@@ -707,28 +717,28 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Chocolate
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
             </div>
           </div>
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $3.0
               </span>
@@ -738,15 +748,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Iced Coffee
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -754,13 +764,13 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $5.0
               </span>
@@ -770,15 +780,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Strawberry Matcha
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -786,13 +796,13 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $3.0
               </span>
@@ -802,15 +812,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Brown Sugar
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -818,13 +828,13 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $4.0
               </span>
@@ -834,46 +844,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
-                Iced Coffee
+                Iced Americano
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
-              >
-                Get Now
-              </button>
-            </div>
-          </div>
-          <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
-          >
-            <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
-            >
-              <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
-              >
-                $3.0
-              </span>
-              <img
-                src="../picture/menuImg/Matccha.png"
-                alt="Iced Coffee"
-                class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
-              />
-            </div>
-            <div class="w-full text-center mt-4 space-y-3">
-              <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
-              >
-                Matcha
-              </h3>
-              <button
-                type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -881,13 +860,45 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
+              >
+                $3.0
+              </span>
+              <img
+                src="../picture/menuImg/Matccha.png"
+                alt="Matcha"
+                class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
+              />
+            </div>
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
+              <h3
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
+              >
+                Matcha
+              </h3>
+              <button
+                type="button"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+              >
+                Get Now
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+          >
+            <div
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
+            >
+              <span
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $5.0
               </span>
@@ -897,15 +908,15 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Strawberry Milk
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -913,31 +924,31 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $3.0
               </span>
               <img
                 src="../picture/menuImg/Vannila.png"
-                alt="Vannila"
+                alt="Vanilla Latte"
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
-               Vannila Latte
+                Vanilla Latte
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
@@ -945,13 +956,13 @@
           </div>
 
           <div
-            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-[2rem] p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
           >
             <div
-              class="w-full bg-white dark:bg-[#1a120b] rounded-[1.5rem] p-4 relative flex items-center justify-center h-48"
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
             >
               <span
-                class="absolute top-3 right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm"
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
               >
                 $4.0
               </span>
@@ -961,15 +972,270 @@
                 class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
               />
             </div>
-            <div class="w-full text-center mt-4 space-y-3">
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 font-bold text-base md:text-lg tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
               >
                 Chocolate
               </h3>
               <button
                 type="button"
-                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-xs uppercase tracking-wider font-bold py-2.5 px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+              >
+                Get Now
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+          >
+            <div
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
+            >
+              <span
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
+              >
+                $3.0
+              </span>
+              <img
+                src="../picture/menuImg/image.png"
+                alt="Iced Coffee"
+                class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
+              />
+            </div>
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
+              <h3
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
+              >
+                Iced Coffee
+              </h3>
+              <button
+                type="button"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+              >
+                Get Now
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+          >
+            <div
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
+            >
+              <span
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
+              >
+                $5.0
+              </span>
+              <img
+                src="../picture/menuImg/strawberryMatcha.png"
+                alt="Strawberry Matcha"
+                class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
+              />
+            </div>
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
+              <h3
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
+              >
+                Strawberry Matcha
+              </h3>
+              <button
+                type="button"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+              >
+                Get Now
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+          >
+            <div
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
+            >
+              <span
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
+              >
+                $3.0
+              </span>
+              <img
+                src="../picture/menuImg/brownSugar.png"
+                alt="Brown Sugar Milk"
+                class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
+              />
+            </div>
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
+              <h3
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
+              >
+                Brown Sugar
+              </h3>
+              <button
+                type="button"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+              >
+                Get Now
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+          >
+            <div
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
+            >
+              <span
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
+              >
+                $4.0
+              </span>
+              <img
+                src="../picture/menuImg/americano.png"
+                alt="Iced Americano"
+                class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
+              />
+            </div>
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
+              <h3
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
+              >
+                Iced Americano
+              </h3>
+              <button
+                type="button"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+              >
+                Get Now
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+          >
+            <div
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
+            >
+              <span
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
+              >
+                $3.0
+              </span>
+              <img
+                src="../picture/menuImg/Matccha.png"
+                alt="Matcha"
+                class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
+              />
+            </div>
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
+              <h3
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
+              >
+                Matcha
+              </h3>
+              <button
+                type="button"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+              >
+                Get Now
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+          >
+            <div
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
+            >
+              <span
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
+              >
+                $5.0
+              </span>
+              <img
+                src="../picture/menuImg/strawberry.png"
+                alt="Strawberry Milk"
+                class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
+              />
+            </div>
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
+              <h3
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
+              >
+                Strawberry Milk
+              </h3>
+              <button
+                type="button"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+              >
+                Get Now
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+          >
+            <div
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
+            >
+              <span
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
+              >
+                $3.0
+              </span>
+              <img
+                src="../picture/menuImg/Vannila.png"
+                alt="Vanilla Latte"
+                class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
+              />
+            </div>
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
+              <h3
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
+              >
+                Vanilla Latte
+              </h3>
+              <button
+                type="button"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
+              >
+                Get Now
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#eddcd2]/60 dark:bg-[#2c1d11]/30 border border-[#b58363]/10 dark:border-amber-900/20 rounded-2xl sm:rounded-[2rem] p-3 sm:p-5 flex flex-col items-center justify-between shadow-sm hover:shadow-md transition-all duration-300 group"
+          >
+            <div
+              class="w-full bg-white dark:bg-[#1a120b] rounded-xl sm:rounded-[1.5rem] p-2 sm:p-4 relative flex items-center justify-center h-28 sm:h-40 md:h-48"
+            >
+              <span
+                class="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#fdfbf7]/90 dark:bg-[#2c1d11]/90 text-[#593825] dark:text-amber-200 text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm"
+              >
+                $4.0
+              </span>
+              <img
+                src="../picture/menuImg/chocolate.png"
+                alt="Chocolate"
+                class="w-full h-full object-contain transform group-hover:scale-105 transition duration-300 filter drop-shadow-md"
+              />
+            </div>
+            <div class="w-full text-center mt-2 sm:mt-4 space-y-1.5 sm:space-y-3">
+              <h3
+                class="text-[#4a3325] dark:text-amber-100 font-bold text-xs sm:text-base md:text-lg tracking-wide"
+              >
+                Chocolate
+              </h3>
+              <button
+                type="button"
+                class="w-full bg-[#b58363] hover:bg-[#9a6a4c] dark:bg-[#835538] dark:hover:bg-[#6b4226] text-white text-[10px] sm:text-xs uppercase tracking-wider font-bold py-1.5 sm:py-2.5 px-2 sm:px-5 rounded-full shadow-sm transition-colors duration-200 cursor-pointer"
               >
                 Get Now
               </button>
