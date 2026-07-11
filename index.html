@@ -1,11 +1,640 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linux Cafe - Perfect Match Design</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="./src/output.css"> -->
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <script>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;1,700&family=Playfair+Display:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .font-serif-italic {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#fdfbf7] dark:bg-[#1a120b] min-h-screen flex flex-col justify-between text-slate-800 dark:text-amber-100 transition-colors duration-300 overflow-x-hidden"
+  >
+    <header
+      class="fixed inset-x-0 top-4 md:top-6 z-50 px-4 md:px-6 max-w-6xl mx-auto"
+    >
+      <nav
+        class="flex h-14 items-center justify-between rounded-full bg-[#b58363]/90 dark:bg-[#2c1d11]/90 backdrop-blur-md px-6 md:px-8 shadow-md"
+      >
+        <a href="#" class="text-white text-xl font-bold italic tracking-wide"
+          >LinuxCafe</a
+        >
+
+        <ul
+          class="hidden md:flex items-center gap-1 text-white text-sm font-medium"
+        >
+          <li>
+            <a
+              href="#"
+              class="px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition duration-300"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition duration-300"
+              >Menu</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition duration-300"
+              >Promotions</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition duration-300"
+              >About Us</a
+            >
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-2 md:gap-4">
+          <button
+            id="theme-toggle"
+            type="button"
+            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+          >
+            <svg
+              id="theme-toggle-dark-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+            <svg
+              id="theme-toggle-light-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+
+          <div class="hidden sm:flex items-center gap-2">
+            <a
+              href="#"
+              class="text-white text-xs uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/30 bg-white/10 hover:bg-white/20 transition"
+              >sign up</a
+            >
+            <a
+              href="#"
+              class="bg-[#e4cbbe] dark:bg-[#b58363] text-[#593825] dark:text-white text-xs uppercase tracking-wider font-bold px-4 py-1.5 rounded-full hover:bg-white dark:hover:bg-amber-100 dark:hover:text-[#593825] transition"
+              >sign in</a
+            >
+          </div>
+
+          <button
+            data-collapse-toggle="mobile-menu"
+            type="button"
+            class="block md:hidden p-2 text-white hover:bg-white/10 rounded-full transition"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden mt-2 bg-[#b58363] dark:bg-[#2c1d11] rounded-2xl p-4 shadow-lg flex flex-col gap-2 text-center text-white font-medium"
+      >
+        <a href="#" class="py-2.5 rounded-xl hover:bg-orange-500 transition"
+          >Home</a
+        >
+        <a href="#" class="py-2.5 rounded-xl hover:bg-orange-500 transition"
+          >Menu</a
+        >
+        <a href="#" class="py-2.5 rounded-xl hover:bg-orange-500 transition"
+          >Promotions</a
+        >
+        <a href="#" class="py-2.5 rounded-xl hover:bg-orange-500 transition"
+          >About Us</a
+        >
+        <div
+          class="flex gap-2 justify-center pt-2 border-t border-white/20 sm:hidden"
+        >
+          <a
+            href="#"
+            class="text-xs uppercase px-4 py-2 rounded-full border border-white/30 bg-white/10"
+            >Sign Up</a
+          >
+          <a
+            href="#"
+            class="bg-[#e4cbbe] text-[#593825] text-xs uppercase font-bold px-4 py-2 rounded-full"
+            >Sign In</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="w-full">
+      <!-- HERO — splash images cleaned up: symmetric sizing, softer overlap, no crowding of the headline -->
+      <section
+        class="relative bg-[#ebdcd0] dark:bg-[#251b14] pt-40 pb-24 md:pt-48 md:pb-32 px-6 min-h-[600px] md:min-h-[640px] flex items-center justify-center overflow-hidden transition-colors duration-300"
+      >
+        <div
+          class="absolute left-[-4%] bottom-[-2%] w-[42%] sm:w-[34%] md:w-[30%] max-w-[380px] opacity-70 sm:opacity-100 pointer-events-none select-none z-10"
+        >
+          <img
+            src="./picture/image_2026-07-11_02-04-31.png"
+            alt="Left Coffee Splash"
+            class="w-full h-auto object-contain origin-bottom-left drop-shadow-xl"
+          />
+        </div>
+
+        <div
+          class="absolute right-[-4%] bottom-[-2%] w-[38%] sm:w-[30%] md:w-[26%] max-w-[340px] opacity-70 sm:opacity-100 pointer-events-none select-none z-10"
+        >
+          <img
+            src="./picture/image_2026-07-11_02-04-42.png"
+            alt="Right Iced Coffee"
+            class="w-full h-auto object-contain origin-bottom-right drop-shadow-xl"
+          />
+        </div>
+
+        <div
+          class="relative z-20 max-w-3xl text-center mx-auto space-y-4 md:space-y-6 px-4"
+        >
+          <h1
+            class="text-[#593825] dark:text-amber-100 text-5xl sm:text-6xl md:text-7xl font-bold italic tracking-tight font-serif-italic"
+          >
+            LinuxCafe
+          </h1>
+          <p
+            class="text-white dark:text-amber-200/90 text-2xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-wide drop-shadow-sm"
+          >
+            Make your day great with our <br />
+            special Coffee
+          </p>
+
+          <div class="flex flex-row items-center justify-center gap-4 pt-4">
+            <a
+              href="#"
+              class="bg-[#b4876a] dark:bg-[#b58363] text-white text-xs sm:text-sm font-medium px-6 sm:px-7 py-2.5 rounded-full hover:bg-[#9a6a4c] dark:hover:bg-[#835538] transition shadow-sm"
+              >Order Now</a
+            >
+            <a
+              href="#"
+              class="bg-[#b4876a] dark:bg-[#b58363] text-white text-xs sm:text-sm font-medium px-6 sm:px-7 py-2.5 rounded-full hover:bg-[#9a6a4c] dark:hover:bg-[#835538] transition shadow-sm"
+              >Contact-Us</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- POPULAR DRINK — every card now uses the same image container size, a soft glow
+           behind each product so it "pops" off the card, and a consistent overlap amount -->
+      <section class="max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+        <h2
+          class="text-[#593825] dark:text-amber-100 text-3xl font-bold text-center mb-16 md:mb-24 tracking-wide font-serif-italic"
+        >
+          Popular Drink
+        </h2>
+
+        <div class="space-y-8 sm:space-y-12 md:space-y-20 max-w-3xl mx-auto">
+          <div
+            class="bg-[#eddcd2]/80 dark:bg-[#2c1d11]/40 border border-[#b58363]/10 dark:border-amber-900/30 rounded-2xl sm:rounded-[2rem] p-4 sm:p-8 md:p-10 flex flex-row items-center gap-4 sm:gap-6 md:gap-8 relative shadow-sm transition-colors duration-300"
+          >
+            <div
+              class="w-24 h-24 sm:w-40 sm:h-40 md:w-52 md:h-52 flex-shrink-0 relative -ml-6 sm:-ml-10 md:-ml-14 z-10 transform hover:scale-105 transition duration-300"
+            >
+              <div
+                class="absolute inset-3 sm:inset-4 rounded-full bg-gradient-to-br from-rose-200/70 to-[#b58363]/20 dark:from-rose-500/10 dark:to-[#b58363]/10 blur-xl -z-10"
+              ></div>
+              <img
+                src="./picture/matchaStwberry.png"
+                alt="Strawberry Matcha Latte"
+                class="w-full h-full object-contain filter drop-shadow-lg"
+              />
+            </div>
+            <div
+              class="min-w-0 flex-1 text-left space-y-1 sm:space-y-2 md:space-y-3"
+            >
+              <h3
+                class="text-[#4a3325] dark:text-amber-200 text-sm sm:text-lg md:text-2xl font-bold tracking-wide font-serif-italic"
+              >
+                Strawberry Matcha Latte
+              </h3>
+              <p
+                class="text-[#6b5345] dark:text-amber-300/70 text-[10px] sm:text-xs md:text-sm leading-relaxed font-medium"
+              >
+                A vibrant, layered iced drink featuring a bright red strawberry
+                puree or syrup at the bottom, a creamy layer of whole milk in
+                the middle, and a rich, earthy layer of whisked green tea matcha
+                on top.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#eddcd2]/80 dark:bg-[#2c1d11]/40 border border-[#b58363]/10 dark:border-amber-900/30 rounded-2xl sm:rounded-[2rem] p-4 sm:p-8 md:p-10 flex flex-row-reverse items-center gap-4 sm:gap-6 md:gap-8 relative shadow-sm transition-colors duration-300"
+          >
+            <div
+              class="w-24 h-24 sm:w-40 sm:h-40 md:w-52 md:h-52 flex-shrink-0 relative -mr-6 sm:-mr-10 md:-mr-14 z-10 transform hover:scale-105 transition duration-300"
+            >
+              <div
+                class="absolute inset-3 sm:inset-4 rounded-full bg-gradient-to-br from-amber-200/70 to-[#b58363]/20 dark:from-amber-500/10 dark:to-[#b58363]/10 blur-xl -z-10"
+              ></div>
+              <img
+                src="./picture/iceIlate.png"
+                alt="Iced Caramel Macchiato"
+                class="w-full h-full object-contain filter drop-shadow-lg"
+              />
+            </div>
+            <div
+              class="min-w-0 flex-1 text-left space-y-1 sm:space-y-2 md:space-y-3"
+            >
+              <h3
+                class="text-[#4a3325] dark:text-amber-200 text-sm sm:text-lg md:text-2xl font-bold tracking-wide font-serif-italic"
+              >
+                Iced Caramel Macchiato
+              </h3>
+              <p
+                class="text-[#6b5345] dark:text-amber-300/70 text-[10px] sm:text-xs md:text-sm leading-relaxed font-medium"
+              >
+                A classic, refreshing coffee beverage made with cold milk and
+                sweet vanilla or caramel syrup, poured over ice, and topped with
+                rich espresso shots that swirl into the milk.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="relative bg-[#f4e6dc] dark:bg-[#2c1d11]/40 border border-[#b98462]/10 dark:border-amber-900/30 rounded-[2.5rem] p-8 pl-48 md:pl-56 min-h-[220px] flex flex-col justify-center overflow-hidden shadow-sm transition-colors duration-300"
+          >
+            <div
+              class="absolute left-0 bottom-0 w-44 md:w-52 h-[90%] flex items-end select-none pointer-events-none dark:to-[#b58363]/10"
+            >
+              <img
+                src="./picture/Cookies&Cream.png"
+                alt="Cookies & Cream Milkshake"
+                class="w-full h-auto object-contain object-left-bottom transform scale-105 translate-y-[2px] -translate-x-[5px]"
+              />
+            </div>
+
+            <div class="relative z-10 flex flex-col justify-center">
+              <h3
+                class="text-[#4a3325] dark:text-amber-200 text-2xl md:text-3xl font-bold font-serif italic tracking-wide"
+              >
+                Cookies & Cream Milkshake
+              </h3>
+              <p
+                class="text-[#4a3325]/70 dark:text-amber-300/70 text-xs md:text-sm mt-3 leading-relaxed max-w-xl"
+              >
+                A decadent, blended sweet treat made with vanilla ice cream,
+                milk, and crushed chocolate sandwich cookies (like Oreos). It
+                features a thick, creamy texture and is loaded with chocolate
+                cookie bits throughout.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="w-full bg-[#fbcbc9] dark:bg-[#36221d] flex flex-col md:flex-row items-center justify-between px-8 md:px-16 pt-16 md:pt-24 relative overflow-hidden transition-colors duration-300"
+      >
+        <div
+          class="w-full md:w-1/2 flex flex-col justify-center pb-12 md:pb-24 z-10"
+        >
+          <h2
+            class="text-white dark:text-amber-100 text-3xl sm:text-6xl md:text-7xl font-black font-serif-italic leading-none tracking-tight drop-shadow-[0_4px_10px_rgba(89,56,37,0.25)]"
+          >
+            New<br />drink
+          </h2>
+
+          <div class="mt-6 max-w-sm">
+            <h3
+              class="text-[#4a3325]/80 dark:text-orange-400 font-bold text-xl md:text-2xl font-serif"
+            >
+              Iced latte
+            </h3>
+            <p class="text-[#4a3325]/70 dark:text-amber-200/60 text-xs mt-2 leading-relaxed">
+              A refreshing coffee drink made with espresso, cold milk, and ice.
+              It has a smooth, light flavor, balancing the strength of espresso
+              with the creaminess of milk. Perfect for hot days or when you want
+              a cool, energizing coffee without being too strong.
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-3 gap-4 mt-12 pt-6 border-t border-[#4a3325]/10 dark:border-amber-900/30 max-w-md"
+          >
+            <div>
+              <p class="text-[#4a3325] dark:text-amber-200 font-black text-xl">
+                3 <span class="text-xs font-bold text-[#4a3325] dark:text-amber-400/80">Syrups</span>
+              </p>
+              <p class="text-[#4a3325]/60 dark:text-amber-500/60 text-[10px]">vanilla, caramel</p>
+            </div>
+            <div>
+              <p class="text-[#4a3325] dark:text-amber-200 font-black text-xl">With</p>
+              <p class="text-[#4a3325]/60 dark:text-amber-500/60 text-[10px]">
+                espresso +<br />cold milk + ice
+              </p>
+            </div>
+            <div>
+              <p class="text-[#4a3325] dark:text-amber-200 font-black text-xl">20%</p>
+              <p class="text-[#4a3325]/60 dark:text-amber-500/60 text-[10px]">Sale</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="w-full md:w-auto flex flex-col items-center justify-center my-6 md:my-0 z-10 md:absolute md:left-[55%] md:top-1/2 md:-translate-y-1/2"
+        >
+          <span
+            class="text-[#4a3325] dark:text-amber-100 font-black text-4xl md:text-5xl tracking-tight"
+            >3.50$</span
+          >
+          <span class="text-[#4a3325]/50 dark:text-orange-400/70 font-bold text-xl line-through -mt-1"
+            >5$</span
+          >
+        </div>
+
+        <div
+          class="w-full md:w-1/2 h-full flex items-end justify-center md:justify-end self-end relative pt-8 md:pt-0"
+        >
+          <img
+            src="./picture/promostion.png"
+            alt="Iced Latte Specialty"
+            class="max-w-[85%] md:max-w-[90%] h-auto block align-bottom object-contain transform translate-y-[1px]"
+          />
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="w-full bg-[#fdfbf7] dark:bg-[#150e09] text-[#593825] dark:text-amber-100 pt-16 md:pt-24 pb-8 border-t border-[#ebdcd0]/60 dark:border-amber-900/20 transition-colors duration-300"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 items-start"
+      >
+        <div class="space-y-5 col-span-2">
+          <h3 class="text-3xl font-bold italic tracking-wide font-serif-italic">
+            LinuxCafe
+          </h3>
+          <p
+            class="text-xs md:text-sm text-[#8a6f61] dark:text-amber-300/60 leading-relaxed max-w-xs font-medium"
+          >
+            Crafting timeless coffee experiences. Discover delicious drinks made
+            with love every day.
+          </p>
+          <div
+            class="flex items-center gap-4 text-[#593825] dark:text-amber-200 pt-2"
+          >
+            <a
+              href="#"
+              class="hover:opacity-70 transition"
+              aria-label="Twitter"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="hover:opacity-70 transition"
+              aria-label="Instagram"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="hover:opacity-70 transition"
+              aria-label="Facebook"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-4 col-span-1">
+          <h4
+            class="text-xs md:text-sm font-bold uppercase tracking-wider text-[#593825] dark:text-amber-200"
+          >
+            Explore
+          </h4>
+          <ul
+            class="space-y-2.5 text-xs md:text-sm text-[#8a6f61] dark:text-amber-400/60 font-medium"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >New Released</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Best Seller</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Coming Soon</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Collections</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-4 col-span-1">
+          <h4
+            class="text-xs md:text-sm font-bold uppercase tracking-wider text-[#593825] dark:text-amber-200"
+          >
+            Company
+          </h4>
+          <ul
+            class="space-y-2.5 text-xs md:text-sm text-[#8a6f61] dark:text-amber-400/60 font-medium"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Our Community</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Careers</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-4 col-span-1">
+          <h4
+            class="text-xs md:text-sm font-bold uppercase tracking-wider text-[#593825] dark:text-amber-200"
+          >
+            Support
+          </h4>
+          <ul
+            class="space-y-2.5 text-xs md:text-sm text-[#8a6f61] dark:text-amber-400/60 font-medium"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Help Center</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Shipping Info</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Returns</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Track Order</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="max-w-6xl mx-auto px-6 md:px-8 mt-12 md:mt-16 pt-6 border-t border-[#ebdcd0]/60 dark:border-amber-900/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#a98b7d] dark:text-amber-500/50 font-medium"
+      >
+        <p>&copy; 2026 linuxCafe. All right reserved</p>
+        <div class="flex items-center gap-6">
+          <a
+            href="#"
+            class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+            >Privacy Policy</a
+          >
+          <span>|</span>
+          <a
+            href="#"
+            class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+            >Terms of Service</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
 </html>
