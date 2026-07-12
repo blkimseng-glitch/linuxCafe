@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinuxCafe — About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#faf3e6",
+              tan: "#e3d2c1",
+              "brown-nav": "#7c4b3a",
+              "brown-dark": "#3a2317",
+              "brown-mid": "#8c6a54",
+              "text-brown": "#5c4030",
+              "accent-orange": "#d98b3f",
+              "footer-maroon": "#6b3226",
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', "serif"],
+              body: ["Poppins", "sans-serif"],
+            },
+            keyframes: {
+              marquee: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+            },
+            animation: {
+              marquee: "marquee 18s linear infinite",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-body text-text-brown bg-cream">
+    <!-- Nav -->
+    <nav
+      class="bg-brown-nav flex items-center justify-between flex-wrap gap-4 px-10 py-4"
+    >
+      <div class="font-display italic font-bold text-[22px] text-[#f4e3cf]">
+        LinuxCafe
+      </div>
+      <div class="flex gap-9 flex-wrap justify-center">
+        <a href="#" class="text-[#f4e3cf] text-sm">Home</a>
+        <a href="#" class="text-[#f4e3cf] text-sm">Menu</a>
+        <a href="#" class="text-[#f4e3cf] text-sm">Promotions</a>
+        <a href="#" class="text-[#f4e3cf] text-sm">About Us</a>
+      </div>
+      <div class="flex gap-2.5">
+        <button
+          class="px-5 py-2 rounded-full text-[13px] border border-[#f4e3cf] text-[#f4e3cf]"
+        >
+          Sign up
+        </button>
+        <button
+          class="px-5 py-2 rounded-full text-[13px] border bg-[#f4e3cf] text-[black]"
+        >
+          Login
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section
+      class="flex items-center justify-between gap-10 px-[60px] py-[70px] flex-wrap text-center md:text-left"
+    >
+      <div class="max-w-[460px] mx-auto md:mx-0">
+        <h1 class="font-display text-[38px] text-brown-dark mb-4">About-Us</h1>
+        <p class="text-[#b0703e] leading-[1.8] text-[15px]">
+          Welcome to LinuxCafe, where tech culture meets the perfect brew! We
+          are a vibrant hub for coders, designers, and tech enthusiasts to
+          connect, collaborate, and refuel with a premium cup of coffee.
+        </p>
+      </div>
+      <div class="w-[480px] mx-auto md:mx-0">
+        <img
+          src="./img/Screenshot_2026-07-11_at_11.50.43_AM-removebg-preview.png"
+          alt="coffee-image 01"
+        />
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="bg-brown-mid overflow-hidden py-4">
+      <div class="flex gap-[60px] whitespace-nowrap w-max animate-marquee">
+        <span class="text-[#f4e3cf] text-[15px]">Matcha</span>
+        <span class="text-[#f4e3cf] text-[15px]">Mocha</span>
+        <span class="text-[#f4e3cf] text-[15px]">Cappuccino</span>
+        <span class="text-[#f4e3cf] text-[15px]">Ice-Latte</span>
+        <span class="text-[#f4e3cf] text-[15px]">Matcha</span>
+        <span class="text-[#f4e3cf] text-[15px]">Mocha</span>
+        <span class="text-[#f4e3cf] text-[15px]">Cappuccino</span>
+        <span class="text-[#f4e3cf] text-[15px]">Matcha</span>
+        <span class="text-[#f4e3cf] text-[15px]">Mocha</span>
+        <span class="text-[#f4e3cf] text-[15px]">Cappuccino</span>
+        <span class="text-[#f4e3cf] text-[15px]">Ice-Latte</span>
+        <span class="text-[#f4e3cf] text-[15px]">Matcha</span>
+        <span class="text-[#f4e3cf] text-[15px]">Mocha</span>
+        <span class="text-[#f4e3cf] text-[15px]">Cappuccino</span>
+      </div>
+    </div>
+
+    <!-- Vision -->
+    <section
+      class="bg-brown-mid flex items-center justify-between gap-10 px-[60px] py-[70px] flex-wrap text-center md:text-left"
+    >
+      <div class="max-w-[480px] mx-auto md:mx-0">
+        <h2 class="font-display text-[32px] text-[#f4e3cf] mb-4">Our Vision</h2>
+        <p class="text-[#d8c3b4] leading-[1.8] text-[15px]">
+          To be the beating heart of open-source and community—where tech
+          innovation and knowledge unite over a great cup of coffee to empower
+          and elevate local creators.
+        </p>
+      </div>
+      <div class="w-[400px] mx-auto md:mx-0">
+        <img
+          src="./img/Screenshot_2026-07-11_at_11.50.57_AM-removebg-preview.png"
+          alt="coffee-image 02"
+        />
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="bg-tan px-10 py-[70px] text-center">
+      <h2 class="font-display text-[32px] text-brown-dark mb-[50px]">
+        Meet Our Team
+      </h2>
+
+      <div class="flex justify-center mb-[50px]">
+        <div class="flex flex-col items-center">
+          <img
+            src="./img/Eung Lyzhia.jpeg"
+            alt="Eung Lyzhia"
+            class="w-[150px] h-[150px] rounded-full object-cover mb-3.5 border-[3px] border-white transition-all duration-300 ease-in-out hover:scale-110"
+          />
+          <h3
+            class="text-[15px] font-semibold text-brown-dark mb-1 transition-all duration-300 ease-in-out hover:scale-110"
+          >
+            Eung Lyzhia
+          </h3>
+          <span
+            class="text-accent-orange text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
+            >Mentor</span
+          >
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-2 md:grid-cols-3 gap-x-[30px] gap-y-[50px] max-w-[800px] mx-auto"
+      >
+        <div class="flex flex-col items-center">
+          <img
+            src="./img/meng.jpg"
+            alt="Thoeng Korngmeng"
+            class="w-[140px] h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white transition-all duration-300 ease-in-out hover:scale-110"
+          />
+          <h3
+            class="text-[15px] font-semibold text-brown-dark mb-1 transition-all duration-300 ease-in-out hover:scale-110"
+          >
+            Thoeng Korngmeng
+          </h3>
+          <span
+            class="text-accent-orange text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
+            >UX/UI Design</span
+          >
+        </div>
+        <div class="flex flex-col items-center">
+          <img
+            src="./img/neang.jpg"
+            alt="Chet Sreyneang"
+            class="w-[140px] h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white transition-all duration-300 ease-in-out hover:scale-110"
+          />
+          <h3
+            class="text-[15px] font-semibold text-brown-dark mb-1 transition-all duration-300 ease-in-out hover:scale-110"
+          >
+            Chet Sreyneang
+          </h3>
+          <span
+            class="text-accent-orange text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
+            >UX/UI Design</span
+          >
+        </div>
+        <div class="flex flex-col items-center">
+          <img
+            src="./img/roth.jpg"
+            alt="Chhun Sopharoth"
+            class="w-[140px] h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white transition-all duration-300 ease-in-out hover:scale-110"
+          />
+          <h3
+            class="text-[15px] font-semibold text-brown-dark mb-1 transition-all duration-300 ease-in-out hover:scale-110"
+          >
+            Chhun Sopharoth
+          </h3>
+          <span
+            class="text-accent-orange text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
+            >UX/UI Design</span
+          >
+        </div>
+        <div class="flex flex-col items-center">
+          <img
+            src="./img/kimseng.jpg"
+            alt="Bon Lykimseng"
+            class="w-[140px] h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white transition-all duration-300 ease-in-out hover:scale-110"
+          />
+          <h3
+            class="text-[15px] font-semibold text-brown-dark mb-1 transition-all duration-300 ease-in-out hover:scale-110"
+          >
+            Bon Lykimseng
+          </h3>
+          <span
+            class="text-accent-orange text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
+            >Frontend</span
+          >
+        </div>
+        <div class="flex flex-col items-center">
+          <img
+            src="./img/ravit.jpg"
+            alt="Hai Hengravit"
+            class="w-[140px] h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white transition-all duration-300 ease-in-out hover:scale-110"
+          />
+          <h3
+            class="text-[15px] font-semibold text-brown-dark mb-1 transition-all duration-300 ease-in-out hover:scale-110"
+          >
+            Hai Hengravit
+          </h3>
+          <span
+            class="text-accent-orange text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
+            >Frontend</span
+          >
+        </div>
+        <div class="flex flex-col items-center">
+          <img
+            src="./img/vibol.jpg"
+            alt="Phorng Vibol"
+            class="w-[140px] h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white transition-all duration-300 ease-in-out hover:scale-110"
+          />
+          <h3
+            class="text-[15px] font-semibold text-brown-dark mb-1 transition-all duration-300 ease-in-out hover:scale-110"
+          >
+            Phorng Vibol
+          </h3>
+          <span
+            class="text-accent-orange text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
+            >Frontend</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cream px-10 md:px-[60px] pt-[60px] pb-[30px]">
+      <div class="flex justify-between gap-10 flex-wrap pb-10">
+        <div class="max-w-[300px]">
+          <div class="font-display text-[32px] text-footer-maroon mb-3.5">
+            LinuxCafe
+          </div>
+          <p class="text-[#8a8378] text-[16px] leading-[1.7] mb-5">
+            Crafting timeless coffee experiences. Discover delicious drinks made
+            with love every day.
+          </p>
+          <div class="flex gap-3">
+            <a
+              href="#"
+              class="w-8 h-8 bg-brown-dark text-white rounded-full flex items-center justify-center text-sm"
+              >𝕏</a
+            >
+            <a
+              href="#"
+              class="w-8 h-8 bg-brown-dark text-white rounded-full flex items-center justify-center text-sm"
+              >◎</a
+            >
+            <a
+              href="#"
+              class="w-8 h-8 bg-brown-dark text-white rounded-full flex items-center justify-center text-sm"
+              >f</a
+            >
+          </div>
+        </div>
+
+        <div class="flex gap-[70px] flex-wrap">
+          <div>
+            <h4
+              class="text-[16px] tracking-wide text-brown-dark mb-4 font-semibold"
+            >
+              EXPLORE
+            </h4>
+            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
+              >New Released</a
+            >
+            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
+              >Best Seller</a
+            >
+            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
+              >Coming Soon</a
+            >
+            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
+              >Collections</a
+            >
+          </div>
+          <div>
+            <h4
+              class="text-[16px] tracking-wide text-brown-dark mb-4 font-semibold"
+            >
+              COMPANY
+            </h4>
+            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
+              >About Us</a
+            >
+            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
+              >Our Community</a
+            >
+            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
+              >Careers</a
+            >
+            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
+              >Contact</a
+            >
+          </div>
+          <div>
+            <h4
+              class="text-[16px] tracking-wide text-brown-dark mb-4 font-semibold"
+            >
+              SUPPORT
+            </h4>
+            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
+              >Help Center</a
+            >
+            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
+              >Shipping Info</a
+            >
+            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
+              >Returns</a
+            >
+            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
+              >Track Order</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="border-t border-[#e3dccf] pt-5 flex justify-between flex-wrap gap-2.5 text-[#a39b8d] text-xs"
+      >
+        <span>© 2026 LinuxCafe. All rights reserved</span>
+        <div class="flex gap-5">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
