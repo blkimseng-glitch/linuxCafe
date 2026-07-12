@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Linux Cafe - Perfect Match Design</title>
 
+    
+    <link
+      rel="shortcut icon"
+      href="../picture/linuxCafeLogo(2).png"
+      type="image/x-icon"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- <link rel="stylesheet" href="./src/output.css"> -->
 
@@ -79,7 +85,7 @@
           </li>
           <li>
             <a
-              href="#"
+              href="#promostion"
               class="px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition duration-300"
               >Promotions</a
             >
@@ -127,12 +133,12 @@
 
           <div class="hidden sm:flex items-center gap-2">
             <a
-              href="#"
+              href="./HTML/sign-up.html"
               class="text-white text-xs uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/30 bg-white/10 hover:bg-white/20 transition"
               >sign up</a
             >
             <a
-              href="#"
+              href="./HTML/sign-In.html"
               class="bg-[#e4cbbe] dark:bg-[#b58363] text-[#593825] dark:text-white text-xs uppercase tracking-wider font-bold px-4 py-1.5 rounded-full hover:bg-white dark:hover:bg-amber-100 dark:hover:text-[#593825] transition"
               >sign in</a
             >
@@ -166,13 +172,19 @@
         id="mobile-menu"
         class="hidden md:hidden mt-2 bg-[#b58363] dark:bg-[#2c1d11] rounded-2xl p-4 shadow-lg flex flex-col gap-2 text-center text-white font-medium"
       >
-        <a href="./index.html" class="py-2.5 rounded-xl hover:bg-orange-500 transition"
+        <a
+          href="./index.html"
+          class="py-2.5 rounded-xl hover:bg-orange-500 transition"
           >Home</a
         >
-        <a href="./HTML/menu.html" class="py-2.5 rounded-xl hover:bg-orange-500 transition"
+        <a
+          href="./HTML/menu.html"
+          class="py-2.5 rounded-xl hover:bg-orange-500 transition"
           >Menu</a
         >
-        <a href="./index.html" class="py-2.5 rounded-xl hover:bg-orange-500 transition"
+        <a
+          href="#promostion"
+          class="py-2.5 rounded-xl hover:bg-orange-500 transition"
           >Promotions</a
         >
         <a href="#" class="py-2.5 rounded-xl hover:bg-orange-500 transition"
@@ -182,12 +194,12 @@
           class="flex gap-2 justify-center pt-2 border-t border-white/20 sm:hidden"
         >
           <a
-            href="#"
+            href="./HTML/sign-up.html"
             class="text-xs uppercase px-4 py-2 rounded-full border border-white/30 bg-white/10"
             >Sign Up</a
           >
           <a
-            href="#"
+            href="./HTML/sign-In.html"
             class="bg-[#e4cbbe] text-[#593825] text-xs uppercase font-bold px-4 py-2 rounded-full"
             >Sign In</a
           >
@@ -204,7 +216,7 @@
           class="absolute left-[-4%] bottom-[-2%] w-[42%] sm:w-[34%] md:w-[30%] max-w-[380px] opacity-70 sm:opacity-100 pointer-events-none select-none z-10"
         >
           <img
-            src="./picture/image_2026-07-11_02-04-31.png"
+            src="./picture/leftcafe.png"
             alt="Left Coffee Splash"
             class="w-full h-auto object-contain origin-bottom-left drop-shadow-xl"
           />
@@ -214,7 +226,7 @@
           class="absolute right-[-4%] bottom-[-2%] w-[38%] sm:w-[30%] md:w-[26%] max-w-[340px] opacity-70 sm:opacity-100 pointer-events-none select-none z-10"
         >
           <img
-            src="./picture/promostion.png"
+            src="./picture/rightcafe.png"
             alt="Right Iced Coffee"
             class="w-full h-auto object-contain origin-bottom-right drop-shadow-xl"
           />
@@ -360,6 +372,7 @@
 
       <section
         class="w-full bg-[#fbcbc9] dark:bg-[#36221d] flex flex-col md:flex-row items-center justify-between px-8 md:px-16 pt-16 md:pt-24 relative overflow-hidden transition-colors duration-300"
+        id="promostion"
       >
         <div
           class="w-full md:w-1/2 flex flex-col justify-center pb-12 md:pb-24 z-10"
@@ -376,7 +389,9 @@
             >
               Iced latte
             </h3>
-            <p class="text-[#4a3325]/70 dark:text-amber-200/60 text-xs mt-2 leading-relaxed">
+            <p
+              class="text-[#4a3325]/70 dark:text-amber-200/60 text-xs mt-2 leading-relaxed"
+            >
               A refreshing coffee drink made with espresso, cold milk, and ice.
               It has a smooth, light flavor, balancing the strength of espresso
               with the creaminess of milk. Perfect for hot days or when you want
@@ -389,19 +404,31 @@
           >
             <div>
               <p class="text-[#4a3325] dark:text-amber-200 font-black text-xl">
-                3 <span class="text-xs font-bold text-[#4a3325] dark:text-amber-400/80">Syrups</span>
+                3
+                <span
+                  class="text-xs font-bold text-[#4a3325] dark:text-amber-400/80"
+                  >Syrups</span
+                >
               </p>
-              <p class="text-[#4a3325]/60 dark:text-amber-500/60 text-[10px]">vanilla, caramel</p>
+              <p class="text-[#4a3325]/60 dark:text-amber-500/60 text-[10px]">
+                vanilla, caramel
+              </p>
             </div>
             <div>
-              <p class="text-[#4a3325] dark:text-amber-200 font-black text-xl">With</p>
+              <p class="text-[#4a3325] dark:text-amber-200 font-black text-xl">
+                With
+              </p>
               <p class="text-[#4a3325]/60 dark:text-amber-500/60 text-[10px]">
                 espresso +<br />cold milk + ice
               </p>
             </div>
             <div>
-              <p class="text-[#4a3325] dark:text-amber-200 font-black text-xl">20%</p>
-              <p class="text-[#4a3325]/60 dark:text-amber-500/60 text-[10px]">Sale</p>
+              <p class="text-[#4a3325] dark:text-amber-200 font-black text-xl">
+                20%
+              </p>
+              <p class="text-[#4a3325]/60 dark:text-amber-500/60 text-[10px]">
+                Sale
+              </p>
             </div>
           </div>
         </div>
@@ -413,7 +440,8 @@
             class="text-[#4a3325] dark:text-amber-100 font-black text-4xl md:text-5xl tracking-tight"
             >3.50$</span
           >
-          <span class="text-[#4a3325]/50 dark:text-orange-400/70 font-bold text-xl line-through -mt-1"
+          <span
+            class="text-[#4a3325]/50 dark:text-orange-400/70 font-bold text-xl line-through -mt-1"
             >5$</span
           >
         </div>
