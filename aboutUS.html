@@ -4,14 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LinuxCafe — About Us</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: "class",
         theme: {
           extend: {
             colors: {
@@ -41,136 +38,313 @@
         },
       };
     </script>
+    <script>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .font-serif-italic {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+      }
+    </style>
   </head>
-  <body class="font-body text-text-brown bg-cream">
+  <body
+    class="font-body text-text-brown bg-cream dark:bg-[#1a120b] dark:text-amber-100 transition-colors duration-300"
+  >
     <!-- Nav -->
-    <nav
-      class="bg-brown-nav flex items-center justify-between flex-wrap gap-4 px-10 py-4"
+    <header
+      class="fixed inset-x-0 top-4 md:top-6 z-50 px-4 md:px-6 max-w-6xl mx-auto"
     >
-      <div class="font-display italic font-bold text-[22px] text-[#f4e3cf]">
-        LinuxCafe
-      </div>
-      <div class="flex gap-9 flex-wrap justify-center">
-        <a href="#" class="text-[#f4e3cf] text-sm">Home</a>
-        <a href="#" class="text-[#f4e3cf] text-sm">Menu</a>
-        <a href="#" class="text-[#f4e3cf] text-sm">Promotions</a>
-        <a href="#" class="text-[#f4e3cf] text-sm">About Us</a>
-      </div>
-      <div class="flex gap-2.5">
-        <button
-          class="px-5 py-2 rounded-full text-[13px] border border-[#f4e3cf] text-[#f4e3cf]"
+      <nav
+        class="flex h-14 items-center justify-between rounded-full bg-[#b58363]/90 dark:bg-[#2c1d11]/90 backdrop-blur-md px-6 md:px-8 shadow-md"
+      >
+        <a
+          href="./index.html"
+          class="text-white text-xl font-bold italic tracking-wide"
+          >LinuxCafe</a
         >
-          Sign up
-        </button>
-        <button
-          class="px-5 py-2 rounded-full text-[13px] border bg-[#f4e3cf] text-[black]"
+
+        <ul
+          class="hidden md:flex items-center gap-1 text-white text-sm font-medium"
         >
-          Login
-        </button>
+          <li>
+            <a
+              href="./index.html"
+              class="px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition duration-300"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="./HTML/menu.html"
+              class="px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition duration-300"
+              >Menu</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition duration-300"
+              >Promotions</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="px-4 py-2 rounded-full hover:bg-orange-500 text-white transition duration-300"
+              >About Us</a
+            >
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-2 md:gap-4">
+          <button
+            id="theme-toggle"
+            type="button"
+            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+          >
+            <svg
+              id="theme-toggle-dark-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+            <svg
+              id="theme-toggle-light-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+
+          <div class="hidden sm:flex items-center gap-2">
+            <a
+              href="#"
+              class="text-white text-xs uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/30 bg-white/10 hover:bg-white/20 transition"
+              >sign up</a
+            >
+            <a
+              href="#"
+              class="bg-[#e4cbbe] dark:bg-[#b58363] text-[#593825] dark:text-white text-xs uppercase tracking-wider font-bold px-4 py-1.5 rounded-full hover:bg-white dark:hover:bg-amber-100 dark:hover:text-[#593825] transition"
+              >sign in</a
+            >
+          </div>
+
+          <button
+            data-collapse-toggle="mobile-menu"
+            type="button"
+            class="block md:hidden p-2 text-white hover:bg-white/10 rounded-full transition"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden mt-2 bg-[#b58363] dark:bg-[#2c1d11] rounded-2xl p-4 shadow-lg flex flex-col gap-2 text-center text-white font-medium"
+      >
+        <a
+          href="./index.html"
+          class="py-2.5 rounded-xl hover:bg-orange-500 transition"
+          >Home</a
+        >
+        <a
+          href="./HTML/menu.html"
+          class="py-2.5 rounded-xl hover:bg-orange-500 transition"
+          >Menu</a
+        >
+        <a href="" class="py-2.5 rounded-xl hover:bg-orange-500 transition"
+          >Promotions</a
+        >
+        <a href="#" class="py-2.5 rounded-xl hover:bg-orange-500 transition"
+          >About Us</a
+        >
+        <div
+          class="flex gap-2 justify-center pt-2 border-t border-white/20 sm:hidden"
+        >
+          <a
+            href="#"
+            class="text-xs uppercase px-4 py-2 rounded-full border border-white/30 bg-white/10"
+            >Sign Up</a
+          >
+          <a
+            href="#"
+            class="bg-[#e4cbbe] text-[#593825] text-xs uppercase font-bold px-4 py-2 rounded-full"
+            >Sign In</a
+          >
+        </div>
       </div>
-    </nav>
+    </header>
 
     <!-- Hero -->
     <section
-      class="flex items-center justify-between gap-10 px-[60px] py-[70px] flex-wrap text-center md:text-left"
+      class="flex flex-col md:flex-row items-center justify-between gap-10 px-6 sm:px-10 lg:px-[60px] pt-32 pb-16 md:pt-40 md:pb-[70px] text-center md:text-left transition-colors duration-300"
     >
       <div class="max-w-[460px] mx-auto md:mx-0">
-        <h1 class="font-display text-[38px] text-brown-dark mb-4">About-Us</h1>
-        <p class="text-[#b0703e] leading-[1.8] text-[15px]">
+        <h1
+          class="font-display text-3xl sm:text-4xl md:text-[38px] text-brown-dark dark:text-amber-100 mb-4"
+        >
+          About Us
+        </h1>
+        <p
+          class="text-[#b0703e] dark:text-amber-300/70 leading-[1.8] text-sm md:text-[15px]"
+        >
           Welcome to LinuxCafe, where tech culture meets the perfect brew! We
           are a vibrant hub for coders, designers, and tech enthusiasts to
           connect, collaborate, and refuel with a premium cup of coffee.
         </p>
       </div>
-      <div class="w-[480px] mx-auto md:mx-0">
+      <div class="w-full max-w-[480px] mx-auto md:mx-0">
         <img
           src="./img/Screenshot_2026-07-11_at_11.50.43_AM-removebg-preview.png"
           alt="coffee-image 01"
+          class="w-full h-auto"
         />
       </div>
     </section>
 
     <!-- Marquee -->
-    <div class="bg-brown-mid overflow-hidden py-4">
-      <div class="flex gap-[60px] whitespace-nowrap w-max animate-marquee">
-        <span class="text-[#f4e3cf] text-[15px]">Matcha</span>
-        <span class="text-[#f4e3cf] text-[15px]">Mocha</span>
-        <span class="text-[#f4e3cf] text-[15px]">Cappuccino</span>
-        <span class="text-[#f4e3cf] text-[15px]">Ice-Latte</span>
-        <span class="text-[#f4e3cf] text-[15px]">Matcha</span>
-        <span class="text-[#f4e3cf] text-[15px]">Mocha</span>
-        <span class="text-[#f4e3cf] text-[15px]">Cappuccino</span>
-        <span class="text-[#f4e3cf] text-[15px]">Matcha</span>
-        <span class="text-[#f4e3cf] text-[15px]">Mocha</span>
-        <span class="text-[#f4e3cf] text-[15px]">Cappuccino</span>
-        <span class="text-[#f4e3cf] text-[15px]">Ice-Latte</span>
-        <span class="text-[#f4e3cf] text-[15px]">Matcha</span>
-        <span class="text-[#f4e3cf] text-[15px]">Mocha</span>
-        <span class="text-[#f4e3cf] text-[15px]">Cappuccino</span>
+    <div
+      class="bg-brown-mid dark:bg-[#2c1d11] overflow-hidden py-4 transition-colors duration-300"
+    >
+      <div
+        class="flex gap-10 sm:gap-[60px] whitespace-nowrap w-max animate-marquee"
+      >
+        <span class="text-[#f4e3cf] text-sm md:text-[15px]">Matcha</span>
+        <span class="text-[#f4e3cf] text-sm md:text-[15px]">Mocha</span>
+        <span class="text-[#f4e3cf] text-sm md:text-[15px]">Cappuccino</span>
+        <span class="text-[#f4e3cf] text-sm md:text-[15px]">Ice-Latte</span>
+        <span class="text-[#f4e3cf] text-sm md:text-[15px]">Matcha</span>
+        <span class="text-[#f4e3cf] text-sm md:text-[15px]">Mocha</span>
+        <span class="text-[#f4e3cf] text-sm md:text-[15px]">Cappuccino</span>
+        <span class="text-[#f4e3cf] text-sm md:text-[15px]">Matcha</span>
+        <span class="text-[#f4e3cf] text-sm md:text-[15px]">Mocha</span>
+        <span class="text-[#f4e3cf] text-sm md:text-[15px]">Cappuccino</span>
+        <span class="text-[#f4e3cf] text-sm md:text-[15px]">Ice-Latte</span>
+        <span class="text-[#f4e3cf] text-sm md:text-[15px]">Matcha</span>
+        <span class="text-[#f4e3cf] text-sm md:text-[15px]">Mocha</span>
+        <span class="text-[#f4e3cf] text-sm md:text-[15px]">Cappuccino</span>
       </div>
     </div>
 
     <!-- Vision -->
     <section
-      class="bg-brown-mid flex items-center justify-between gap-10 px-[60px] py-[70px] flex-wrap text-center md:text-left"
+      class="bg-brown-mid dark:bg-[#251b14] flex flex-col md:flex-row items-center justify-between gap-10 px-6 sm:px-10 lg:px-[60px] py-16 md:py-[70px] text-center md:text-left transition-colors duration-300"
     >
       <div class="max-w-[480px] mx-auto md:mx-0">
-        <h2 class="font-display text-[32px] text-[#f4e3cf] mb-4">Our Vision</h2>
-        <p class="text-[#d8c3b4] leading-[1.8] text-[15px]">
+        <h2
+          class="font-display text-2xl sm:text-3xl md:text-[32px] text-[#f4e3cf] mb-4"
+        >
+          Our Vision
+        </h2>
+        <p class="text-[#d8c3b4] leading-[1.8] text-sm md:text-[15px]">
           To be the beating heart of open-source and community—where tech
           innovation and knowledge unite over a great cup of coffee to empower
           and elevate local creators.
         </p>
       </div>
-      <div class="w-[400px] mx-auto md:mx-0">
+      <div class="w-full max-w-[400px] mx-auto md:mx-0">
         <img
           src="./img/Screenshot_2026-07-11_at_11.50.57_AM-removebg-preview.png"
           alt="coffee-image 02"
+          class="w-full h-auto"
         />
       </div>
     </section>
 
     <!-- Team -->
-    <section class="bg-tan px-10 py-[70px] text-center">
-      <h2 class="font-display text-[32px] text-brown-dark mb-[50px]">
+    <section
+      class="bg-tan dark:bg-[#2c1d11]/40 px-6 sm:px-10 py-16 md:py-[70px] text-center transition-colors duration-300"
+    >
+      <h2
+        class="font-display text-2xl sm:text-3xl md:text-[32px] text-brown-dark dark:text-amber-100 mb-10 md:mb-[50px]"
+      >
         Meet Our Team
       </h2>
 
-      <div class="flex justify-center mb-[50px]">
+      <div class="flex justify-center mb-10 md:mb-[50px]">
         <div class="flex flex-col items-center">
           <img
             src="./img/Eung Lyzhia.jpeg"
             alt="Eung Lyzhia"
-            class="w-[150px] h-[150px] rounded-full object-cover mb-3.5 border-[3px] border-white transition-all duration-300 ease-in-out hover:scale-110"
+            class="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] rounded-full object-cover mb-3.5 border-[3px] border-white dark:border-amber-900/40 transition-all duration-300 ease-in-out hover:scale-110"
           />
           <h3
-            class="text-[15px] font-semibold text-brown-dark mb-1 transition-all duration-300 ease-in-out hover:scale-110"
+            class="text-sm md:text-[15px] font-semibold text-brown-dark dark:text-amber-100 mb-1 transition-all duration-300 ease-in-out hover:scale-110"
           >
             Eung Lyzhia
           </h3>
           <span
-            class="text-accent-orange text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
+            class="text-accent-orange dark:text-orange-400 text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
             >Mentor</span
           >
         </div>
       </div>
 
       <div
-        class="grid grid-cols-2 md:grid-cols-3 gap-x-[30px] gap-y-[50px] max-w-[800px] mx-auto"
+        class="grid grid-cols-2 md:grid-cols-3 gap-x-6 sm:gap-x-[30px] gap-y-10 sm:gap-y-[50px] max-w-[800px] mx-auto"
       >
         <div class="flex flex-col items-center">
           <img
             src="./img/meng.jpg"
             alt="Thoeng Korngmeng"
-            class="w-[140px] h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white transition-all duration-300 ease-in-out hover:scale-110"
+            class="w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white dark:border-amber-900/40 transition-all duration-300 ease-in-out hover:scale-110"
           />
           <h3
-            class="text-[15px] font-semibold text-brown-dark mb-1 transition-all duration-300 ease-in-out hover:scale-110"
+            class="text-xs sm:text-[15px] font-semibold text-brown-dark dark:text-amber-100 mb-1 transition-all duration-300 ease-in-out hover:scale-110"
           >
             Thoeng Korngmeng
           </h3>
           <span
-            class="text-accent-orange text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
+            class="text-accent-orange dark:text-orange-400 text-[10px] sm:text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
             >UX/UI Design</span
           >
         </div>
@@ -178,15 +352,15 @@
           <img
             src="./img/neang.jpg"
             alt="Chet Sreyneang"
-            class="w-[140px] h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white transition-all duration-300 ease-in-out hover:scale-110"
+            class="w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white dark:border-amber-900/40 transition-all duration-300 ease-in-out hover:scale-110"
           />
           <h3
-            class="text-[15px] font-semibold text-brown-dark mb-1 transition-all duration-300 ease-in-out hover:scale-110"
+            class="text-xs sm:text-[15px] font-semibold text-brown-dark dark:text-amber-100 mb-1 transition-all duration-300 ease-in-out hover:scale-110"
           >
             Chet Sreyneang
           </h3>
           <span
-            class="text-accent-orange text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
+            class="text-accent-orange dark:text-orange-400 text-[10px] sm:text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
             >UX/UI Design</span
           >
         </div>
@@ -194,15 +368,15 @@
           <img
             src="./img/roth.jpg"
             alt="Chhun Sopharoth"
-            class="w-[140px] h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white transition-all duration-300 ease-in-out hover:scale-110"
+            class="w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white dark:border-amber-900/40 transition-all duration-300 ease-in-out hover:scale-110"
           />
           <h3
-            class="text-[15px] font-semibold text-brown-dark mb-1 transition-all duration-300 ease-in-out hover:scale-110"
+            class="text-xs sm:text-[15px] font-semibold text-brown-dark dark:text-amber-100 mb-1 transition-all duration-300 ease-in-out hover:scale-110"
           >
             Chhun Sopharoth
           </h3>
           <span
-            class="text-accent-orange text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
+            class="text-accent-orange dark:text-orange-400 text-[10px] sm:text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
             >UX/UI Design</span
           >
         </div>
@@ -210,15 +384,15 @@
           <img
             src="./img/kimseng.jpg"
             alt="Bon Lykimseng"
-            class="w-[140px] h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white transition-all duration-300 ease-in-out hover:scale-110"
+            class="w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white dark:border-amber-900/40 transition-all duration-300 ease-in-out hover:scale-110"
           />
           <h3
-            class="text-[15px] font-semibold text-brown-dark mb-1 transition-all duration-300 ease-in-out hover:scale-110"
+            class="text-xs sm:text-[15px] font-semibold text-brown-dark dark:text-amber-100 mb-1 transition-all duration-300 ease-in-out hover:scale-110"
           >
             Bon Lykimseng
           </h3>
           <span
-            class="text-accent-orange text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
+            class="text-accent-orange dark:text-orange-400 text-[10px] sm:text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
             >Frontend</span
           >
         </div>
@@ -226,15 +400,15 @@
           <img
             src="./img/ravit.jpg"
             alt="Hai Hengravit"
-            class="w-[140px] h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white transition-all duration-300 ease-in-out hover:scale-110"
+            class="w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white dark:border-amber-900/40 transition-all duration-300 ease-in-out hover:scale-110"
           />
           <h3
-            class="text-[15px] font-semibold text-brown-dark mb-1 transition-all duration-300 ease-in-out hover:scale-110"
+            class="text-xs sm:text-[15px] font-semibold text-brown-dark dark:text-amber-100 mb-1 transition-all duration-300 ease-in-out hover:scale-110"
           >
             Hai Hengravit
           </h3>
           <span
-            class="text-accent-orange text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
+            class="text-accent-orange dark:text-orange-400 text-[10px] sm:text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
             >Frontend</span
           >
         </div>
@@ -242,15 +416,15 @@
           <img
             src="./img/vibol.jpg"
             alt="Phorng Vibol"
-            class="w-[140px] h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white transition-all duration-300 ease-in-out hover:scale-110"
+            class="w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] rounded-full object-cover mb-3.5 border-[3px] border-white dark:border-amber-900/40 transition-all duration-300 ease-in-out hover:scale-110"
           />
           <h3
-            class="text-[15px] font-semibold text-brown-dark mb-1 transition-all duration-300 ease-in-out hover:scale-110"
+            class="text-xs sm:text-[15px] font-semibold text-brown-dark dark:text-amber-100 mb-1 transition-all duration-300 ease-in-out hover:scale-110"
           >
             Phorng Vibol
           </h3>
           <span
-            class="text-accent-orange text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
+            class="text-accent-orange dark:text-orange-400 text-[10px] sm:text-xs font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110"
             >Frontend</span
           >
         </div>
@@ -258,105 +432,210 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-cream px-10 md:px-[60px] pt-[60px] pb-[30px]">
-      <div class="flex justify-between gap-10 flex-wrap pb-10">
-        <div class="max-w-[300px]">
-          <div class="font-display text-[32px] text-footer-maroon mb-3.5">
+    <footer
+      class="w-full bg-[#fdfbf7] dark:bg-[#150e09] text-[#593825] dark:text-amber-100 pt-16 md:pt-24 pb-8 border-t border-[#ebdcd0]/60 dark:border-amber-900/20 transition-colors duration-300"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 items-start"
+      >
+        <div class="space-y-5 col-span-2">
+          <h3 class="text-3xl font-bold italic tracking-wide font-serif-italic">
             LinuxCafe
-          </div>
-          <p class="text-[#8a8378] text-[16px] leading-[1.7] mb-5">
+          </h3>
+          <p
+            class="text-xs md:text-sm text-[#8a6f61] dark:text-amber-300/60 leading-relaxed max-w-xs font-medium"
+          >
             Crafting timeless coffee experiences. Discover delicious drinks made
             with love every day.
           </p>
-          <div class="flex gap-3">
+          <div
+            class="flex items-center gap-4 text-[#593825] dark:text-amber-200 pt-2"
+          >
             <a
               href="#"
-              class="w-8 h-8 bg-brown-dark text-white rounded-full flex items-center justify-center text-sm"
-              >𝕏</a
+              class="hover:opacity-70 transition"
+              aria-label="Twitter"
             >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </a>
             <a
               href="#"
-              class="w-8 h-8 bg-brown-dark text-white rounded-full flex items-center justify-center text-sm"
-              >◎</a
+              class="hover:opacity-70 transition"
+              aria-label="Instagram"
             >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"
+                ></path>
+              </svg>
+            </a>
             <a
               href="#"
-              class="w-8 h-8 bg-brown-dark text-white rounded-full flex items-center justify-center text-sm"
-              >f</a
+              class="hover:opacity-70 transition"
+              aria-label="Facebook"
             >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                />
+              </svg>
+            </a>
           </div>
         </div>
 
-        <div class="flex gap-[70px] flex-wrap">
-          <div>
-            <h4
-              class="text-[16px] tracking-wide text-brown-dark mb-4 font-semibold"
-            >
-              EXPLORE
-            </h4>
-            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
-              >New Released</a
-            >
-            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
-              >Best Seller</a
-            >
-            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
-              >Coming Soon</a
-            >
-            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
-              >Collections</a
-            >
-          </div>
-          <div>
-            <h4
-              class="text-[16px] tracking-wide text-brown-dark mb-4 font-semibold"
-            >
-              COMPANY
-            </h4>
-            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
-              >About Us</a
-            >
-            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
-              >Our Community</a
-            >
-            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
-              >Careers</a
-            >
-            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
-              >Contact</a
-            >
-          </div>
-          <div>
-            <h4
-              class="text-[16px] tracking-wide text-brown-dark mb-4 font-semibold"
-            >
-              SUPPORT
-            </h4>
-            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
-              >Help Center</a
-            >
-            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
-              >Shipping Info</a
-            >
-            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
-              >Returns</a
-            >
-            <a href="#" class="block text-[#8a8378] text-[16px] mb-3"
-              >Track Order</a
-            >
-          </div>
+        <div class="space-y-4 col-span-1">
+          <h4
+            class="text-xs md:text-sm font-bold uppercase tracking-wider text-[#593825] dark:text-amber-200"
+          >
+            Explore
+          </h4>
+          <ul
+            class="space-y-2.5 text-xs md:text-sm text-[#8a6f61] dark:text-amber-400/60 font-medium"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >New Released</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Best Seller</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Coming Soon</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Collections</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-4 col-span-1">
+          <h4
+            class="text-xs md:text-sm font-bold uppercase tracking-wider text-[#593825] dark:text-amber-200"
+          >
+            Company
+          </h4>
+          <ul
+            class="space-y-2.5 text-xs md:text-sm text-[#8a6f61] dark:text-amber-400/60 font-medium"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Our Community</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Careers</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-4 col-span-1">
+          <h4
+            class="text-xs md:text-sm font-bold uppercase tracking-wider text-[#593825] dark:text-amber-200"
+          >
+            Support
+          </h4>
+          <ul
+            class="space-y-2.5 text-xs md:text-sm text-[#8a6f61] dark:text-amber-400/60 font-medium"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Help Center</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Shipping Info</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Returns</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+                >Track Order</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
 
       <div
-        class="border-t border-[#e3dccf] pt-5 flex justify-between flex-wrap gap-2.5 text-[#a39b8d] text-xs"
+        class="max-w-6xl mx-auto px-6 md:px-8 mt-12 md:mt-16 pt-6 border-t border-[#ebdcd0]/60 dark:border-amber-900/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#a98b7d] dark:text-amber-500/50 font-medium"
       >
-        <span>© 2026 LinuxCafe. All rights reserved</span>
-        <div class="flex gap-5">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+        <p>&copy; 2026 linuxCafe. All right reserved</p>
+        <div class="flex items-center gap-6">
+          <a
+            href="#"
+            class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+            >Privacy Policy</a
+          >
+          <span>|</span>
+          <a
+            href="#"
+            class="hover:text-[#593825] dark:hover:text-amber-100 transition"
+            >Terms of Service</a
+          >
         </div>
       </div>
     </footer>
+
+    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
