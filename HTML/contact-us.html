@@ -10,7 +10,7 @@
       type="image/x-icon"
     />
 
-  <meta
+    <meta
       name="description"
       content="Welcome to Linux Cafe, where we serve the best Cambodian cuisine in a warm and inviting atmosphere."
     />
@@ -26,10 +26,7 @@
       property="og:description"
       content="Welcome to Linux Cafe, where we serve the best Cambodian cuisine in a warm and inviting atmosphere."
     />
-    <meta
-      property="og:image"
-      content="./picture/linuxCafeLogo(2).png"
-    />
+    <meta property="og:image" content="../picture/linuxCafeLogo(2).png" />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -43,10 +40,7 @@
       name="twitter:description"
       content="Welcome to Linux Cafe, where we serve the best Cambodian cuisine in a warm and inviting atmosphere."
     />
-    <meta
-      name="twitter:image"
-      content="../picture/linuxCafeLogo(2).png"
-    />
+    <meta name="twitter:image" content="../picture/linuxCafeLogo(2).png" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- <link rel="stylesheet" href="./src/output.css"> -->
@@ -117,7 +111,7 @@
           </li>
           <li>
             <a
-              href="./HTML/menu.html"
+              href="./menu.html"
               class="px-4 py-2 rounded-full hover:bg-orange-500 hover:text-white transition duration-300"
               >Menu</a
             >
@@ -226,7 +220,9 @@
           class="py-2.5 rounded-xl hover:bg-orange-500 transition"
           >Promotions</a
         >
-        <a href="./aboutUS.html" class="py-2.5 rounded-xl hover:bg-orange-500 transition"
+        <a
+          href="./aboutUS.html"
+          class="py-2.5 rounded-xl hover:bg-orange-500 transition"
           >About Us</a
         >
         <div
@@ -254,7 +250,7 @@
           class="max-w-4xl w-full mx-auto bg-[#eedcd2] dark:bg-[#2c1d11]/70 rounded-[2rem] shadow-xl flex flex-col md:flex-row min-h-[500px] relative mt-8 md:mt-0 border border-[#b98462]/10 dark:border-amber-900/20 transition-colors duration-300"
         >
           <div
-            class="w-full md:w-[45%] md:absolute md:-left-6 md:-top-6 md:-bottom-6 md:h-[calc(100%+3rem)] bg-gradient-to-b from-[#2c1d11]/90 to-[#1a120b]/98 rounded-[2rem] p-8 flex flex-col justify-between text-white shadow-2xl z-20 overflow-hidden"
+            class="relative w-full md:w-[45%] md:absolute md:-left-6 md:-top-6 md:-bottom-6 md:h-[calc(100%+3rem)] bg-gradient-to-b from-[#2c1d11]/90 to-[#1a120b]/98 rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between text-white shadow-2xl z-20 overflow-hidden"
           >
             <img
               src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=600&auto=format&fit=crop"
@@ -264,12 +260,12 @@
 
             <div class="relative z-10">
               <h2
-                class="text-3xl sm:text-4xl font-extrabold font-serif italic tracking-wide mb-8"
+                class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-serif italic tracking-wide mb-6 sm:mb-8"
               >
                 Contact Us
               </h2>
 
-              <ul class="space-y-5 text-sm font-light text-[#eedcd2]/90">
+              <ul class="space-y-4 sm:space-y-5 text-sm font-light text-[#eedcd2]/90">
                 <li class="flex items-start gap-3">
                   <span
                     class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0"
@@ -373,11 +369,11 @@
           </div>
 
           <div
-            class="w-full md:w-[55%] md:ml-auto p-8 sm:p-12 flex flex-col justify-center z-10"
+            class="w-full md:w-[55%] md:ml-auto p-6 sm:p-8 md:p-12 flex flex-col justify-center z-10"
           >
             <div class="text-center mb-6">
               <h3
-                class="text-[#4a3325] dark:text-amber-100 text-3xl sm:text-4xl font-extrabold font-serif tracking-wide"
+                class="text-[#4a3325] dark:text-amber-100 text-2xl sm:text-3xl md:text-4xl font-extrabold font-serif tracking-wide"
               >
                 Get in Touch
               </h3>
@@ -423,13 +419,11 @@
         </div>
       </section>
 
-      <section
-        class="w-screen relative px-4 pb-16 sm:pb-24 flex justify-center items-center"
-      >
-        <div class="w-full h-[320px] sm:h-[420px] md:h-[500px] relative group">
+      <section class="w-full px-4 pb-16 sm:pb-24 flex justify-center items-center">
+        <div class="w-full h-[280px] sm:h-[420px] md:h-[500px] relative group">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.7706649726216!2d104.9213123!3d11.5682976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDM0JzA1LjkiTiAxMDTCsDU1JzE2LjciRQ!5e0!3m2!1skm!2skh!4v1710000000000!5m2!1skm!2skh"
-            class="w-full h-full border-0 block opacity-90 group-hover:opacity-100 transition-opacity duration-300 rounded-[2rem]"
+            class="w-full h-full border-0 block opacity-90 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl sm:rounded-[2rem]"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -642,7 +636,7 @@
       </div>
     </footer>
 
-    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
-    <script src="./index.js"></script>
+    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="../index.js"></script>
   </body>
 </html>
